@@ -1,0 +1,15 @@
+    1  pwd
+    2  cd /var/log
+    3  cd ..
+    4  ls
+    5  ls -l
+    6  ls -ltr
+    7  cd /
+    8  cd
+    9  cd ..
+   10  man ls
+   11  cd /var
+   12  ls -Sr
+   13  uname -a
+   14  cd
+   15  history > Vanessa220916.module2

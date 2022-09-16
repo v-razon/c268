@@ -1,0 +1,44 @@
+    1  cd
+    2  pwd
+    3  mkdir Algo1
+    4  cd Algo1/
+    5  mkdir config bin logs scripts
+    6  cd config
+    7  touch config.config variables
+    8  cd ..
+    9  cd scripts/
+   10  touch start.sh stop.sh admin.sh
+   11  cd ..
+   12  cd logs
+   13  touch today.log
+   14  cd
+   15  ls -lR
+   16  cd Algo1/config/
+   17  rm variables 
+   18  cd ..
+   19  rm -rf bin
+   20  ls
+   21  cd
+   22  cd Algo1/
+   23  mkdir bin
+   24  cd logs/
+   25  mkdir oldlogs
+   26  cd oldlogs/
+   27  mkdir 2019 2018 2017
+   28  cd 2017
+   29  touch 2017.log
+   30  cd ..
+   31  cd 2018
+   32  touch 2018.log
+   33  cd .. 
+   34  cd 2019
+   35  touch 2019.log
+   36  cd
+   37  rm Algo1/logs/oldlogs/
+   38  pwd
+   39  find /home -name *.sh
+   40  cd Algo1/scripts/
+   41  rm s*.sh
+   42  ls
+   43  cd
+   44  history > Vanessa.220916.module3
