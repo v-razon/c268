@@ -1,0 +1,72 @@
+    1  STOCK=AAPL
+    2  echo $STOCK
+    3  STOCK="${STOCK}_US"
+    4  echo $STOCK
+    5  PRICE=290.84
+    6  echo "The current price of ${STOCK} is ${PRICE}"
+    7  WHOAMI=$(USER)
+    8  WHOAMI=$USER
+    9  SERVERTPE=$(uname)
+   10  SERVERTYPE
+   11  SERVERTYPE='uname'
+   12  SERVERTYPE
+   13  SERVERTYPE=$(uname)
+   14  SERVERTYPE
+   15  CMD=$(uname -i)
+   16  echo $CMD
+   17  CMD="uname -i"
+   18  $CMD
+   19  CMD="uname -i"
+   20  echo $CMD
+   21  $CMD
+   22  uname -i
+   23  cd
+   24  mkdir scripts
+   25  $PATH
+   26  $PATH += script
+   27  $CMD
+   28  ls
+   29  export PATH=$PATH:/scripts/
+   30  echo $path
+   31  echo PATH
+   32  echo $PATH
+   33  rm -rf Algo1
+   34  mkdir Payment1
+   35  cd Payment1/
+   36  mkdir logs configuration scripts
+   37  cd scripts/
+   38  touch start.sh
+   39  cd configuration
+   40  cd ..
+   41  cd configuration/
+   42  touch instance.properties
+   43  chmod rwx,og=r ro instance.properties 
+   44  chmod rwx,og=r instance.properties 
+   45  chmod u=rwx,og=r instance.properties 
+   46  ls -l
+   47  cd
+   48  cd scripts/
+   49  ls
+   50  chmod u=rwx,g=rwx,o=x start.sh
+   51  ls
+   52  touch start.sh
+   53  chmod u=rwx,g=rwx,o=x start.sh
+   54  cd
+   55  man cat > cat.output
+   56  chmod u=r,g=rwx,o=r cat.output
+   57  cd
+   58  pwd
+   59  rm -rf Payment1
+   60  rm -i cat.output
+   61  man rm
+   62  mkdir temp
+   63  cd pwd
+   64  cd temp
+   65  pwd
+   66  cd ..
+   67  MYTEMP=/home/ec2-user/temp
+   68  MYTEMP=""
+   69  echo $MYTEMP
+   70  rm -rf temp
+   71  history
+   72  history > Vanessa.220919.module4
