@@ -1,0 +1,23 @@
+    1  ps -ef
+    2  echo $USER
+    3  ps -ef | grep $USER
+    4  ps -ef | grep -v $USER
+    5  ps -f $$
+    6  ps -ef f
+    7  ps -eo user,pid,cmd
+    8  ps -eo pid > list
+    9  sleep 300 &
+   10  ps -ef | grep 300
+   11  kill 300
+   12  kill 13454
+   13  top
+   14  top -u root
+   15  ping yahoo.com
+   16  traceroute yahoo.com > yahoo.route
+   17  less yahoo.route 
+   18  ln -s yahoo.route route
+   19  netstat -a > output
+   20  mkdir network
+   21  mv output network
+   22  netstat -i flag
+   23  history > Vanessa220920.module6
