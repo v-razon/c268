@@ -1,0 +1,22 @@
+    1  ./fixGenerator.sh &
+    2  mkdir logs
+    3  jobs
+    4  ls
+    5  mv fixlog20220921193407.log logs
+    6  cd logs
+    7  sed 's/MTHREE/M3/g' fixlog20220921193407.log > fixlog2.log
+    8  grep 35=8 fixlog2.log | grep -v 32=0 > fills.log
+    9* grep 35=4 fills.log > partialFills.log
+   10  grep 39=4 fixlog2.log > cancels.log
+   11  grep 39=2 fills.log > partialFills.log
+   12  less partialFills.log 
+   13  man awk
+   14  less partialFills.log 
+   15  awk '{print $7, $9, $13, $10, $15, $16}' partialFills.log 
+   16  awk '{print $7, $9, $13, $10, $15, $16}' partialFills.log > parsedPartialFills.log
+   17  vi parsedPartialFills.log 
+   18  cp parsedPartialFills.log ~/c268/parsedPartialFills.module10.csv
+   19  cp cancels.log cancels2.log
+   20  vi cancels2.log 
+   21  diff cancels.log cancels2.log
+   22  history > ~/c268/Vanessa220921.module10
