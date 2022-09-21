@@ -1,0 +1,472 @@
+    1  pwd
+    2  cd /var/log
+    3  cd ..
+    4  ls
+    5  ls -l
+    6  ls -ltr
+    7  cd /
+    8  cd
+    9  cd ..
+   10  man ls
+   11  cd /var
+   12  ls -Sr
+   13  uname -a
+   14  cd
+   15  history > Vanessa220916.module2
+   16  ls
+   17  git
+   18  bcp
+   19  git clone
+   20  git clone https://github.com/v-razon/c268.git
+   21  ls
+   22  cd c268/
+   23  ls
+   24  touch file.txt
+   25  ls
+   26  git status
+   27  git add .
+   28  git status
+   29  git commit -m "first commit creating a new file"
+   30  git config --global user.email "razon.vanessa0140@gmail.com"
+   31  git commit -m "first commit creating a new file"
+   32  git push
+   33  git status
+   34  cd
+   35  ls -ltr
+   36  mkdir BasicExercise
+   37  cd BasicExercise/
+   38  touch file.txt
+   39  cd ..
+   40  pwd
+   41  ls
+   42  rmdir BasicExercise
+   43  rm -rf BasicExercise
+   44  ls
+   45  ls -a
+   46  ped
+   47  pwd
+   48  cd c268/
+   49  ls
+   50  cd ..
+   51  find /home/ec2-user/c268/ -name "file"
+   52  find /home/ec2-user/c268/ -name "file*"
+   53  find /home/ec2-user/c268/ -name "file*" -ctime
+   54  find /home/ec2-user/c268/ -name "file*" -mtime
+   55  find /home/ec2-user/c268/ -name "file*" -mtime -1
+   56  cd c268/
+   57  echo 123 > file
+   58  cat file
+   59  echo 456 >> file
+   60  car file
+   61  cat file
+   62  echo 123 > file
+   63  cat file
+   64  less file
+   65  more file
+   66  while true; do Hello >> file; done
+   67  cd
+   68  pwd
+   69  mkdir Algo1
+   70  cd Algo1/
+   71  mkdir config bin logs scripts
+   72  cd config
+   73  touch config.config variables
+   74  cd ..
+   75  cd scripts/
+   76  touch start.sh stop.sh admin.sh
+   77  cd ..
+   78  cd logs
+   79  touch today.log
+   80  cd
+   81  ls -lR
+   82  cd Algo1/config/
+   83  rm variables 
+   84  cd ..
+   85  rm -rf bin
+   86  ls
+   87  cd
+   88  cd Algo1/
+   89  mkdir bin
+   90  cd logs/
+   91  mkdir oldlogs
+   92  cd oldlogs/
+   93  mkdir 2019 2018 2017
+   94  cd 2017
+   95  touch 2017.log
+   96  cd ..
+   97  cd 2018
+   98  touch 2018.log
+   99  cd .. 
+  100  cd 2019
+  101  touch 2019.log
+  102  cd
+  103  rm Algo1/logs/oldlogs/
+  104  pwd
+  105  find /home -name *.sh
+  106  cd Algo1/scripts/
+  107  rm s*.sh
+  108  ls
+  109  cd
+  110  history > Vanessa.220916.module3
+  111  ls
+  112  cp Vanessa220916.module3 c268
+  113  cp Vanessa220916.module3 c268/Vanessa220916.module3
+  114  cp Vanessa.220916.module3 c268
+  115  cd c268/
+  116  ls
+  117  cat file_for_git
+  118  cat file.txt
+  119  cat file
+  120  rm file file_for_git file.txt
+  121  ls
+  122  ls Example
+  123  rm -rf Example
+  124  ls
+  125  SIZE=202
+  126  echo $SIZE
+  127  touch file.txt
+  128  grep 34
+  129  cat Vanessa220916.module3
+  130  ls
+  131  cat Vanessa.220916.module3
+  132  SIZE='file.txt'
+  133  echo $SIZE
+  134  cd
+  135  env
+  136  VAR=pwd
+  137  $VAR
+  138  echo $VAR
+  139  VAR=$(pwd)
+  140  $VAR
+  141  cd c268/
+  142  ls
+  143  git status
+  144  git add .
+  145  git commit -m "commit sept 16"
+  146  git push
+  147  git status
+  148  cat fixGenerator.sh
+  149  cat fixGenerator.sh > newlog.log
+  150  mkdir logs
+  151  mv newlog.log logs
+  152  cat fixGenerator.sh >> logs/newlog.log
+  153  ln -s newlog.log Daily
+  154  ls
+  155  cd
+  156  cat fixGenerator.sh | less
+  157  STOCK=AAPL
+  158  echo $STOCK
+  159  STOCK="${STOCK}_US"
+  160  echo $STOCK
+  161  PRICE=290.84
+  162  echo "The current price of ${STOCK} is ${PRICE}"
+  163  WHOAMI=$(USER)
+  164  WHOAMI=$USER
+  165  SERVERTPE=$(uname)
+  166  SERVERTYPE
+  167  SERVERTYPE='uname'
+  168  SERVERTYPE
+  169  SERVERTYPE=$(uname)
+  170  SERVERTYPE
+  171  CMD=$(uname -i)
+  172  echo $CMD
+  173  CMD="uname -i"
+  174  $CMD
+  175  CMD="uname -i"
+  176  echo $CMD
+  177  $CMD
+  178  uname -i
+  179  cd
+  180  mkdir scripts
+  181  $PATH
+  182  $PATH += script
+  183  $CMD
+  184  ls
+  185  export PATH=$PATH:/scripts/
+  186  echo $path
+  187  echo PATH
+  188  echo $PATH
+  189  rm -rf Algo1
+  190  mkdir Payment1
+  191  cd Payment1/
+  192  mkdir logs configuration scripts
+  193  cd scripts/
+  194  touch start.sh
+  195  cd configuration
+  196  cd ..
+  197  cd configuration/
+  198  touch instance.properties
+  199  chmod rwx,og=r ro instance.properties 
+  200  chmod rwx,og=r instance.properties 
+  201  chmod u=rwx,og=r instance.properties 
+  202  ls -l
+  203  cd
+  204  cd scripts/
+  205  ls
+  206  chmod u=rwx,g=rwx,o=x start.sh
+  207  ls
+  208  touch start.sh
+  209  chmod u=rwx,g=rwx,o=x start.sh
+  210  cd
+  211  man cat > cat.output
+  212  chmod u=r,g=rwx,o=r cat.output
+  213  cd
+  214  pwd
+  215  rm -rf Payment1
+  216  rm -i cat.output
+  217  man rm
+  218  mkdir temp
+  219  cd pwd
+  220  cd temp
+  221  pwd
+  222  cd ..
+  223  MYTEMP=/home/ec2-user/temp
+  224  MYTEMP=""
+  225  echo $MYTEMP
+  226  rm -rf temp
+  227  history
+  228  history > Vanessa.220919.module4
+  229  cd c268/
+  230  cd
+  231  cp Vanessa220919.module4 c268
+  232  cp Vanessa220919.module4 c268/Vanessa220919.module4
+  233  cp Vanessa.220919.module4 c268/Vanessa220919.module4
+  234  cd c268/
+  235  git status
+  236  git add .
+  237  git commit -m "Sept 19"
+  238  git push
+  239  clear
+  240  cd
+  241  clear
+  242  pwdpwd
+  243  pwd
+  244  cd /var/log
+  245  cd ..
+  246  pwd
+  247  ls
+  248  ls -a
+  249  ls -l
+  250  ls -ltr
+  251  ls -ltrs
+  252  cd /
+  253  cd
+  254  cd home
+  255  cd /home
+  256  ls
+  257  cd ec2-user/
+  258  ls
+  259  cd ..
+  260  cd /home
+  261  man ls
+  262  cd /var
+  263  ls -rS
+  264  uname --version
+  265  cd
+  266  pwd
+  267  mkdir Algo1
+  268  cd Algo1/
+  269  cd config bin logs scripts
+  270  mkdir config bin logs scripts
+  271  cd config/
+  272  touch config.config variables
+  273  cd ..
+  274  cd scripts/
+  275  touch start.sh stop.sh admin.sh
+  276  cd ..
+  277  cd logs
+  278  touch today.log
+  279  cd
+  280  ls man ls
+  281  man ls
+  282  ls -R
+  283  rm Algo1/config/variables 
+  284  rm Algo1/config
+  285  ls  Algo1/config
+  286  rmdir Algo1/bin/
+  287  ls Algo1/
+  288  mkdir Algo1/bin
+  289  ls Algo1/
+  290  rmdir Algo1/bin
+  291  cd
+  292  mkdir Algo1/bin
+  293  mkdir Algo1/logs/oldlogs
+  294  mkdir Algo1/logs/oldlogs/2019 Algo1/logs/oldlogs/2018 Algo1/logs/oldlogs/2017
+  295  ls Algo1/logs/oldlogs/
+  296  touch Algo1/logs/oldlogs/2017/2017.log
+  297  ls Algo1/logs/oldlogs/2017
+  298  touch Algo1/logs/oldlogs/2018/2018.log
+  299  touch Algo1/logs/oldlogs/2019/2019.log
+  300  cd
+  301  rm -rf Algo1/logs/oldlogs
+  302  ls Algo1/logs
+  303  cd
+  304  pwd
+  305  find /home -name *.sh
+  306  ls
+  307  man find
+  308  find -name "*.sh"
+  309  cd Algo1/
+  310  find "*.sh"
+  311  find -name "*.sh"
+  312  ls -lR | grep .sh
+  313  cd
+  314  ls -lR | grep .sh
+  315  rm s*.sh
+  316  cd Algo1/scripts/
+  317  rm s*.sh
+  318  ls
+  319  rm -rf Algo1/
+  320  ls
+  321  echo $PATH
+  322  hello="hello world"
+  323  echo $hello
+  324  clear
+  325  vimtutor
+  326  vi hello
+  327  clear
+  328  STOCK="AAPL"
+  329  $STOCK
+  330  clear
+  331  STOCK=AAPL
+  332  vi avengers
+  333  vimtutor 
+  334  wc avengers
+  335  vi avengers
+  336  wc avengers
+  337  vi avengers
+  338  avengers > avengers.Vanessa
+  339  cp avengers c268/avengers.Vanessa
+  340  cd c268/
+  341  ls
+  342  clear
+  343  ls
+  344  cd ..
+  345  ls
+  346  rm fixGenerator.sh
+  347  ls
+  348  wget https://the-software-guild.s3.amazonaws.com/m3-prodsupport/2005-onl/linux/fixGenerator.sh
+  349  ls
+  350  ./fixGenerator.sh
+  351  ls -l
+  352  ls -l fixGenerator.sh 
+  353  chmod 700 fixGenerator.sh
+  354  ls -l fixGenerator.sh 
+  355  ./fixGenerator.sh
+  356  ls
+  357  rm Daily 
+  358  ls
+  359  find ~ -name "newlog.log"
+  360  cd logs
+  361  ls
+  362  rm newlog.log 
+  363  ls
+  364  sed -i "s/\r//g" fixGenerator.sh
+  365  ./fixGenerator.sh
+  366  cd
+  367  sed -i "s/\r//g" fixGenerator.sh
+  368  ./fixGenerator.sh
+  369  ./fixGenerator.sh &
+  370  ls
+  371  ls -l
+  372  rm fixlog20220918152522.log
+  373  ls -l
+  374  ps -ef | grep fixGen
+  375  cat fixlog20220920174128.log
+  376  cat -n fixlog20220920174128.log
+  377  clear
+  378  cat fixlog20220920174128.log > newlog.log
+  379  mkdir logs
+  380  ls logs
+  381  mv newlogs logs
+  382  ls logs
+  383  mv newlogs.log logs
+  384  mv newlog.log logs
+  385  ls logs
+  386  cat fixlog20220920174128.log >> logs/newlog.log
+  387  ln -s logs/newlog.log daily
+  388  ls -l
+  389  less daily
+  390  cat fixlog20220920174128.log | less
+  391  grep 35=d fixlog*
+  392  grep -i 35=d fixlog*
+  393  grep -i 35=d fixlog* > logs/neworders.log
+  394  ls logs/
+  395  cp logs/neworders.log .
+  396  ls
+  397  wc -l neworders.log 
+  398* grep 54=1 fixlog* > logs/b
+  399  grep -iv 35=d fixlog*
+  400  grep -iv 35=d fixlog* > noNewOrders.log
+  401  wc -w noNewOrders.log 
+  402  grep NFLX fixlog* | grep -c 35=D
+  403  grep NFLX fixlog* 
+  404  clear
+  405  rm fixlog*
+  406  ls
+  407  rm neworders.log noNewOrders.log 
+  408  ./ fixGenerator.sh &
+  409  ./fixGenerator.sh &
+  410  ls logs
+  411  rm -rf logs
+  412  rm daily
+  413  ps
+  414  ps -ef | grep fixGen*
+  415  tail -f log*
+  416  ls
+  417  cat fixlog20220920185446.log 
+  418  cat -n fixlog20220920185446.log 
+  419  cat fixlog20220920185446.log > newlog.log
+  420  mkdir logs
+  421  mv newlog.log logs
+  422  ls logs/
+  423  cat fixlog20220920185446.log >> logs/newlog.log 
+  424  man ln
+  425  ln -s fixlog20220920185446.log Daily
+  426  ls
+  427  ls -l
+  428  cd
+  429  cat fixlog20220920185446.log | less
+  430  less fixlog20220920185446.log 
+  431  cat fixlog20220920185446.log | grep 35=D
+  432  cat fixlog20220920185446.log | grep 35=D > newOrders.log
+  433  grep 35=D fixlog*
+  434  mv newOrders.log logs
+  435  ls logs
+  436  cd logs/
+  437  cp newOrders.log ~
+  438  cd ..
+  439  wc -l newOrders.log 
+  440  grep 54=1 fixlog20220920185446.log > logs/buyMessages.log
+  441  wc -l logs/buyMessages.log 
+  442  grep 35=D logs/buyMessages.log 
+  443  grep -ic 35=D logs/buyMessages.log 
+  444  grep -iv 35=D fixlog20220920185446.log > logs/noNewOrders.log
+  445  wc logs/noNewOrders.log 
+  446  tail logs/noNewOrders.log
+  447  tail -5 logs/noNewOrders.log
+  448  grep APPL fixlog20220920185446.log | head -2
+  449  man head
+  450  grep AAPL fixlog20220920185446.log | head -2
+  451  ln -s fixGenerator.sh fix
+  452  ls
+  453  tail -f fixlog20220920185446.log | grep 35=D
+  454  man tail
+  455  mkdir superLogs
+  456  cp ls logs superLogs
+  457  man cp
+  458  cp -t logs superLogs
+  459  cp -t superLogs logs
+  460  cp -R logs superLogs
+  461  ls logs
+  462  ls superLogs/
+  463  rm -rf superLogs/logs/
+  464  ls logs/
+  465  cp -a logs superLogs/
+  466  ls superLogs/
+  467  rm -rf superLogs/logs/
+  468  cp -a logs/. superLogs/
+  469  ls superLogs/
+  470* grep -c FB fixlog20220920185446.log 
+  471  wc fixlog20220920185446.log 
+  472  history > Vanessa220920.module5
