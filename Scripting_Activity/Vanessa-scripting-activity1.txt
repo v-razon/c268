@@ -1,0 +1,31 @@
+#!/bin/bash
+
+: '
+
+---Script for Activity 1---
+This script tells the use about their session
+
+'
+# Variables in file
+PWD=""
+numFiles=""
+
+
+# Prints the username
+echo "Username: $USER"
+
+# Prints the currrent date
+echo "Current date: `date +"%B %d %Y"`"
+
+# Prints current time
+echo "Current time: `date +%T`"
+
+# Prints current directory
+PWD=`pwd`
+echo "Current directory: $PWD"
+
+# Prints number of files in directory
+echo "Number of files in current directory: `ls $PWD | wc -l`"
+
+# Prints biggest file in current directory
+echo "Biggest file in current directory: `ls -lrS $PWD | tail -n1 | awk '{print $5}'`"

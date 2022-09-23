@@ -1,0 +1,44 @@
+#!/bin/bash
+
+<<COMMENT
+
+---Script For Activity 4---
+This script validates how secure someone's password is
+NOTE: Here blank spaces and special characters are acceptable in the password
+
+COMMENT
+
+
+# Validation status of password. This changes once the password does not meet one of the requirements 
+security="secure"
+
+# Prompts user for a password
+echo "Please enter a password"
+IFS= read -r  password
+
+
+# Checks if password length ≥ 8 characters
+if ((${#password} < 8)); then
+	echo "The password should be 8 or more characters!"
+	security="not secure"
+fi
+
+# Checks if password contains numbers
+if [[ !($password =~ [0-9]) ]]; then
+	echo "The password should contain numbers!"
+	security="not secure"
+fi
+
+# Checks if password contains both uppercase and lowercase letters
+if [[ !($password =~ [a-z] && $password =~ [A-Z]) ]]; then
+	echo "The password should contain both uppercase and lowercase letters!"
+	security="not secure"
+fi
+
+
+# Prints result of validation
+echo "Your password is $security"
+
+
+exit 0
+
