@@ -1,0 +1,28 @@
+#!/bin/bash
+
+<<COMMENT
+---Script for Activity 2---
+This script will rename files in a directory to have an extension of today's
+date in YYYMMDD format
+COMMENT
+
+# Useful variables
+TODAY=`date +%Y%m%d`
+dir="dir_activity2"
+path=`find ~ -name $dir`
+fileList=`ls $path` 
+oldName=$path"/"
+newName=$path"/"
+
+
+# Goes through every file in directory
+for file in $fileList; do
+	oldName+=$file
+	newName+=$oldname"."$TODAY
+	`mv $oldName $newName`
+	newName=""
+	oldName=""
+done
+
+
+exit 0

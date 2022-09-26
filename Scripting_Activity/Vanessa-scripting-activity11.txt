@@ -1,0 +1,76 @@
+#!/bin/bash
+
+: '
+---Script for Activity 11---
+This script reads a sequence of numbers, then sorts the list
+in reverse order without any duplicate values
+NOTE: it is assumed that the file is called "file-activity11.txt" 
+      and that all numbers are on the same line
+'
+
+# Useful variables
+file=`find ~ -name "file-activity11.txt"`
+declare -a arr1  # array of original numbers
+arr1=()
+declare -a arr2  # array after sorting and removing duplicate numbers
+arr2=()
+
+# Variables useful when reversing the array
+ptr1=0                    # pointer
+ptr2=$(($ptr1+1))          # pointer
+limit=$((${#arr2[@]}-1))  # last index of arr2
+temp=0                    # holds value temporarily
+
+
+# Function that checks if a number is in an array
+function findNum()
+{
+	result=1
+	for i in ${arr2[@]}; do
+		if (($1 == $i)); then
+		       result=0
+		       break
+		fi	       
+	done
+}
+
+
+# Reads file with numbers and stores in arr1
+arr1=`cat $file`
+
+# arr2 is filled with same numbers as arr1 but without duplicates
+for num in ${arr1[@]}; do 
+	findNum "$num"
+        if [[ $result -eq 1 ]]; then
+               arr2+=($num)
+        fi
+done
+
+
+# This while loop sorts arr2 in reverse order using selection sort.
+# Initially, ptr1 "points" to index 0 of the arr2 and ptr2 "points" to index 1
+limit=$((${#arr2[@]}-1))
+while [[ $ptr1 -ne $limit ]]; do
+	# Goes through arr2 starting from index ptr2
+	for (( i=$ptr2; i<=$limit; i++ )); do
+		
+		# If number at index ptr2 > number at index ptr1, then the numbers switch places
+		if [[ ${arr2[$i]} -gt ${arr2[$ptr1]} ]]; then
+			temp=${arr2[$i]}
+			arr2[$i]=${arr2[$ptr1]}
+			arr2[$ptr1]=$temp
+		fi
+	done
+
+	# ptr1 moves one step to the left and ptr2 is set to one index after ptr1
+	((ptr1++))
+	ptr2=$(($ptr1+1))
+done
+
+
+# Prints contents of arr1 and arr2
+echo "Original sequence of numbers: ${arr1[@]}"
+echo "Same sequence in reverse order with no duplicate numbers: ${arr2[@]}"
+
+
+exit 0

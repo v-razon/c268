@@ -1,0 +1,76 @@
+#!/bin/bash
+
+: ' 
+---Script for Avtivity 8 ---
+This script prompts the user for a series of numbers. The product, average,
+sum, min and max of those numbers are then calculated.
+
+'
+
+# Useful variables/array
+declare -a arr
+arr=()
+arrSize=0
+prod=1
+sum=0
+avg=0
+min=0
+max=0
+prompt="Please enter an integer"
+
+
+# Loop that prompts user for numbers
+while [[ $arrSize -lt 10 ]]; do
+
+	# Allows user to stop entering numbers once 5 numbers have been entered
+	if (( $arrSize>=5 ));then
+		prompt="Please enter an integer or type \"stop\" to start the calculations"
+	fi
+	
+	# Prompts user for input
+	echo $prompt
+	read input
+
+	# Checks if user input is a number
+	if [[ $input =~ ^[0-9]+$ ]]; then
+		arr+=($input)
+		arrSize=${#arr[@]}
+
+	# Checks if user input wants to stop entering numbers
+	elif [[ ($input == "stop" && $arrSize -ge 5) ]]; then
+		break
+
+	# Informs the user that their input must be a number
+	else
+		echo "Your input must be an integer!"
+	fi 
+done
+
+
+# Calculates product, sum, min, max
+min=${arr[0]}
+max=${arr[0]}
+
+for i in ${arr[@]}; do
+	prod=$(( $prod*$i ))
+	sum=$(( $sum+$i ))
+	if (( $i<$min )); then
+		min=$i
+	elif (( $i>$max )); then
+		max=$i
+	fi
+done
+
+# Calculates average
+avg=`echo "scale=2;$sum/$arrSize" | bc`
+
+
+# Prints the results
+echo -e "\nThe integers you have entered are ${arr[@]}"
+echo "The product is $prod"
+echo "The average is $avg"
+echo "The sum is $sum"
+echo "The minimum is $min"
+echo "The maximum is $max"
+
+exit 0
