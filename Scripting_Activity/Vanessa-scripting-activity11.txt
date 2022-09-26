@@ -17,7 +17,6 @@ arr2=()
 
 # Variables useful when reversing the array
 ptr1=0                    # pointer
-ptr2=$(($ptr1+1))          # pointer
 limit=$((${#arr2[@]}-1))  # last index of arr2
 temp=0                    # holds value temporarily
 
@@ -38,7 +37,7 @@ function findNum()
 # Reads file with numbers and stores in arr1
 arr1=`cat $file`
 
-# arr2 is filled with same numbers as arr1 but without duplicates
+# arr2 is filled with same numbers as arr1 but without duplicates using the findNum function
 for num in ${arr1[@]}; do 
 	findNum "$num"
         if [[ $result -eq 1 ]]; then
@@ -52,19 +51,18 @@ done
 limit=$((${#arr2[@]}-1))
 while [[ $ptr1 -ne $limit ]]; do
 	# Goes through arr2 starting from index ptr2
-	for (( i=$ptr2; i<=$limit; i++ )); do
+	for (( ptr2=(ptr1+1); ptr2<=$limit; ptr2++ )); do
 		
 		# If number at index ptr2 > number at index ptr1, then the numbers switch places
-		if [[ ${arr2[$i]} -gt ${arr2[$ptr1]} ]]; then
-			temp=${arr2[$i]}
-			arr2[$i]=${arr2[$ptr1]}
+		if [[ ${arr2[$ptr2]} -gt ${arr2[$ptr1]} ]]; then
+			temp=${arr2[$ptr2]}
+			arr2[$ptr2]=${arr2[$ptr1]}
 			arr2[$ptr1]=$temp
 		fi
 	done
 
-	# ptr1 moves one step to the left and ptr2 is set to one index after ptr1
+	# ptr1 moves one step to the left 
 	((ptr1++))
-	ptr2=$(($ptr1+1))
 done
 
 
