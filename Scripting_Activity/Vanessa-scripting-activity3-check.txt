@@ -1,0 +1,83 @@
+#!/bin/bash
+
+
+<<COMMENT
+---Script for Activity 3---
+This script allows user to check if they have winning lottery numbers
+which are stored in the Vanessa-scripting-activity3-nums.txt file
+NOTE: it is assumed that the order of the lottery numbers  matters
+COMMENT
+
+
+# Useful variables
+file=`find lottery*`
+declare -a lottNums
+lottNums=()
+lottBonus=0
+declare -a userNums
+userNums=()
+userBonus=0
+i=0
+numMatch=0
+
+
+# Function that prompts user for input
+function userNumPrompt()
+{
+	result=0
+	while (( result==0 )) ; do
+		echo "Please enter your number"
+		read input
+		if [[ $input =~ ^[0-9]+$ && $input -le 50 && $input -ge 1 ]]; then 
+			userNums+=($input)
+			result=$input
+		else
+			echo "Your input must be a number between 1 and 50!"
+		fi
+	done
+}
+
+
+# Stores winning values from file in lottNums and lottBonus
+count=1
+while read -n1  num; do
+	echo $num
+	if [ $count -lt 5 ]; then
+		lottNums+=($num)
+		((count++))
+	else 
+		lottBonus=$num
+	fi	
+done < $file
+
+
+# Compares the user's results with that of the lottery
+while [ $i -lt 5 ]; do
+	userNumPrompt
+	if [ $result -eq ${lottNums[$i]} ] ; then
+		echo "MATCH FOUND: $result"
+		((count++))	
+	else 
+		echo -e "NO MATCH: \nyour number: $result\nlottery number: ${lottNums[$i]}"
+	fi
+	((i++))
+done
+
+
+echo ${lottNums[@]}
+echo $lottBonus
+
+if [ $count -eq 5 ]; then
+	echo "Congratulations, all your numbers matched. You have won the lottery!"
+else
+	echo "Sorry, you only got $count/5 matches, you lost!"
+fi
+
+if [ $lottBonus -eq $userBonus ]; then
+	echo "Congratulations, you have won the bonus!!"
+else
+        echo "Sorry, you did not win the bonus!"
+fi
+
+
+exit 0

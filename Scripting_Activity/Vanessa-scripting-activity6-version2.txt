@@ -1,0 +1,22 @@
+#!/bin/bash
+
+: '
+---Script for Activity 6---
+VERSION 2: This script takes two number parameters, outputs their difference
+'
+
+# Useful variables
+a=$1
+b=$2
+
+# Verifies that user inputs are numbers, if not, difference is not calculated 
+if [[ !($a =~ ^[0-9]+$ && $b =~ ^[0-9]+$) ]]; then
+        echo "You must enter 2 numbers when executing the script!"
+        exit 1
+
+else 
+	# Difference calculation
+	echo $(($a-$b))
+fi
+
+exit 0

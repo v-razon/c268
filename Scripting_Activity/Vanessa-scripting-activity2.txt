@@ -2,8 +2,8 @@
 
 <<COMMENT
 ---Script for Activity 2---
-This script will rename files in a directory to have an extension of today's
-date in YYYMMDD format
+This script will rename files in a directory called dir_activity2 
+to have an extension of today's date in YYYMMDD format
 COMMENT
 
 # Useful variables
@@ -17,11 +17,12 @@ newName=$path"/"
 
 # Goes through every file in directory
 for file in $fileList; do
-	oldName+=$file
-	newName+=$oldname"."$TODAY
+	oldName="${path}/${file}"
+	newName="${oldName}.${TODAY}"	
 	`mv $oldName $newName`
-	newName=""
+	echo "file $oldName has been renamed to $newName"
 	oldName=""
+	newName=""
 done
 
 

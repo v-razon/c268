@@ -1,0 +1,6 @@
+#!/bin/bash
+
+:'
+---Script for Activity 7---
+This script is a quiz about dreams
+'

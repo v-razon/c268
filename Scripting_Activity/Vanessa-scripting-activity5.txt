@@ -1,0 +1,39 @@
+#!/bin/bash
+
+: ' 
+---Script for Activity 5---
+This script takes a number as an input and reverses it
+'
+
+# Useful variables
+check=1
+reverseNum=""
+
+# Function that reverses an input. Prints original and reversed numbers
+function reverse() 
+{
+	echo "Original number: $1"
+	index=$((${#1}-1))
+	while [ ${#1} != ${#reverseNum} ]; do 
+		reverseNum+=${1:$index:1}
+		((index--))
+	done	
+	echo "Reversed number: $reverseNum"
+}
+
+# Prompts user for input
+while [ $check -eq 1 ]; do
+	echo "Please enter a number"
+	read num
+	
+	# Only accepts numerical input, will prompt user again otherwise
+	if [[ $num =~ ^[0-9]+$ ]]; then
+		reverse $num
+		check=0
+	else
+		echo "You input must be a number!"
+	fi
+	
+done
+
+exit 0

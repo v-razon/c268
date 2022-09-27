@@ -1,0 +1,40 @@
+#!/bin/bash
+
+: '
+---Script for Activity 3---
+This script generates lottery numbers and outputs those numbers to a file
+called lotteryResults[date].txt
+
+'
+
+# Useful variables
+today=`date +%Y%m%d`
+declare -a nums
+nums=()
+DIFF=0
+bonus=0
+file="lotteryResults${today}.txt"
+
+
+# Generates 10 random numbers and stores them in nums
+DIFF=$(( 50-1+1 ))
+for i in {0..4}; do
+	nums[$i]=$(( $RANDOM%$DIFF ))
+done
+
+# Generates bonus ball number
+DIFF=$(( 10-1+1 ))
+bonus=$(( $RANDOM%DIFF ))
+
+
+echo ${nums[@]}   # Prints the winning lottery numbers
+echo $bonus       # Prints the bonus ball number
+
+
+# Stores winning numbers in file where the 1st 5 numbers are lottery numbers contains and
+# the last number is the bonus ball number
+echo "${nums[@]} $bonus" > $file              
+
+
+exit 0
+

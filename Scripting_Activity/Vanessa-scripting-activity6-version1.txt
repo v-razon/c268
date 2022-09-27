@@ -1,0 +1,25 @@
+#!/bin/bash
+
+: '
+---Script for Activity 6---
+VERSION 1: This script takes two number parameters, determines if the 1st
+parameter is greater than the 2nd
+'
+
+# Useful variables
+a=$1
+b=$2
+
+# Determines if user inputs are both numbers, if not, comparison is not done
+if [[ !($a =~ ^[0-9]+$ && $b =~ ^[0-9]+$) ]]; then
+	echo "You must enter 2 numbers when executing the script!"
+	exit 1
+
+# Compares if a>b. If yes then outputs "True", outputs "False" otherwise
+elif [ $a -gt $b ]; then 
+	echo "True"
+else 
+	echo "False" 
+fi
+
+exit 0
