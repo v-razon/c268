@@ -1,6 +1,51 @@
 #!/bin/bash
 
-:'
+: '
 ---Script for Activity 7---
 This script is a quiz about dreams
 '
+
+# Useful variables
+declare -a questions
+questions=()
+declare -a answers
+answers=()
+numC=0
+
+
+# Fills questions array with questions
+questions+=("We do not dream every night") 
+questions+=("Many dreams are bizarre because part of our brain shuts down") 
+questions+=("Most dreams relate to recent awake experiences") 
+questions+=("Blind people do not dream")
+questions+=("5% of people dream in black and white")
+questions+=("The average person spends 8 years of their life dreaming")
+questions+=("Taking an exam in your dream reveals an underlying fear of failure.")
+questions+=("As much as 95% of all dreams are quickly forgotten shortly after waking")
+questions+=("Negative emotions are more common in dreams")
+questions+=("Dreams with a black cat indicates signs of illness to come")
+
+# Fills answers array
+answers=( "F" "T" "T" "F" "F" "F" "F" "T" "T" "F" )
+
+
+# Quiz: asks questions and only accepts T or F as input
+for i in {0..9}; do 
+	echo "T or F?"
+	ans=""
+	until [[ ($ans = "T" || $ans = "F" ) ]]; do
+		echo ${questions[$i]}
+		read ans
+	done	
+	if [[ $ans = ${answers[$i]} ]]; then
+		echo "Correct!"
+		((numC++))
+	else
+		echo "Incorrect!"
+	fi
+done
+
+# Prints result of quiz
+echo "You scored $numC/10"
+
+exit 0

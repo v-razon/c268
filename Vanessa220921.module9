@@ -1,0 +1,19 @@
+   1  sleep 10
+   2  sleep 500 &
+   3  sleep 700 &
+   4  jobs
+   5  fg %7
+   6  sleep 10 && echo "hello world"
+   7  sleep 5; man ls
+   8  egrep -v "35=D" fixlog* > fixlog.log
+   9  grep 35=D fixlog.log || grep 35=8 fixlog.log
+  10  watch date
+  11  ./fixGenerator.sh &
+  12  jobs
+  13  ls -l
+  14  watch 'tail -f fixlog20220921172015.log | wc -l fixlog20220921172015.log'
+  15  man watch
+  16  ./fixGenerator.sh &
+  17  ls -l
+  18  watch wc -l fixlog20220921172602.log
+  19  history > Vanessa220921.module9

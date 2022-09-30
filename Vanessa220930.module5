@@ -1,0 +1,35 @@
+    4  cat fixGenerator.sh 
+    5  cat -b fixGenerator.sh 
+    6  cat fixlog20220922021506.log > newlog.log
+    7  mkdir logs
+    8  mv newlog.log logs/newlog.log
+    9  cat fixlog20220922021506.log >> logs/newlog.log
+   10  ln -s logs/newlog.log Daily
+   11  ls
+   12  cd
+   13  less fixlog20220922021506.log 
+   14  grep 35=0 fixlog20220922021506.log > logs/newOrders.log
+   15  cp logs/newOrders.log newOrders.log
+   16  ls
+   17  wc -l newOrders.log 
+   18  grep 54=1 fixlog20220922021506.log > logs/buyMessages.log
+   19  cd logs
+   20  wc -l buyMessages.log 
+   21  grep 35=0 buyMessages.log | wc -l
+   22  cd
+   23  grep -v 35=0 fixlog20220922021506.log > logs/noNewOrders.log
+   24  cd
+   25  cd logs
+   26  wc -l noNewOrders.log 
+   27  tail -n5 noNewOrders.log 
+   28  cd
+   29  grep AAPL fixlog20220922021506.log | head -n2
+   30  ln -s fixGenerator.sh fix
+   31  man watch
+   32  watch -d 'tail fixlog20220922021506.log'
+   33  mkdir superLogs
+   34  cp -a /logs/. /superLogs/
+   35  grep -c FB fixlog20220922021506.log 
+   36  wc fixlog20220922021506.log 
+   37  grep 35=0 fixlog20220922021506.log | grep NFLX
+   38  history > Vanessa220930.module5
