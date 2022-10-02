@@ -1,0 +1,9 @@
+00 06 * * Mon,Tue,Wed,Thu,Fri ~/fixGenerator.sh
+00 18 * * Fri ~/fixGenerator.sh
+30 9-16 * * Mon,Wed,Fri ~/fixGenerator.sh 
+00 */2 * * * ~/fixGenerator.sh
+00 12 04 05 * ~/fixGenerator.sh
+25 06 01 * * ~/fixGenerator.sh
+*/20 10-14 * * Tue ~/fixGenerator.sh
+00 * 01 */2 * ~/fixGenerator.sh
+00 6-8 * * Sat,Sun ~/fixGenerator.sh
