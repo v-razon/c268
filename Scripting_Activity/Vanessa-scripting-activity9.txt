@@ -1,0 +1,23 @@
+#!/bin/bash
+
+: '
+--- Script for Activity 9 --
+This script checks if a given file exists or not.
+'
+ 
+file=$1    # file name
+findResult=`find $file`
+
+# If the file exists, an error is printed and a code is returned
+if [[ $findResult != "" ]]; then
+	echo "ERROR: $file already exists"
+	exit 1
+
+# If the file does not exist, the file is created
+else
+	`touch $file`
+	echo "$file has been created"
+
+fi
+
+exit 0
